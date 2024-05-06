@@ -125,21 +125,26 @@ Our prototype was indeed a standard animal live trap that can sense the state of
 The Hardware functionality list was as follows with our updated look:
 
 *HRS 01 - Project shall be based on the SAM W25 microcontroller for the state control.*
+
 We did indeed use this microcontroller. Please reference our board images for proof.
 
 *HRS 02 – Distance type sensor shall be used for obstacle detection.  The sensor shall detect obstacles at a maximum distance of at least 10 cm.*
+
 We used the GP2Y0E02B distance sensor which according to the datasheet operates up to 50 cm. The following two images show the results of testing the device which exceeded our expectations and allowed us to measure what we needed. Near vs far.
 ![18cm](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/08b06876-573a-47bd-bcc1-48ef6486e034)
 ![63cm](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/28b724bb-c4d8-452e-aad6-bc266bbba8bc)
 
 
 *HRS 03 - Camera sensor shall be used for image capture of the trap interior. The resolution shall be at least 480p.*
+
 We did implement a Camera in our system that operated off of UART. We had a pinout on our board for the UCAM-III which the resolution of is VGA 640x480 pixels. However, due to sharing the 5V power pin with the motor driver board, the camera was unable to be powered at the same time as all three motors. It could be powered seperatly, but not during their operation. This was problematic as the cameras power draw interfered with the motors so much so that they did not have enough to run simulatenously. This resulted in us unplugging the camera to make the system work.
 
 *HRS 04 - There shall be a noisemaker inside the trap with a strenth of at least 55 dB that will.*
+
 The buzzer we used was the CMI-1295-85T which has a max rating of 85 dB accourding to the datasheet. While we did not explicitly test the dB level, the loud sound it made which needed to be covered by tape along with our annoyed colleagues glances in the lab told us it was doing its job.
 
 *HRS 05 - A electronic motor shall be used to reset the trap remotely and have a torque of 40 Nm in order to reset the trap mechanism.*
+
 We were a bit off on our initial torque estimates. We actually only needed 20 Kg-cm of torque. We also needed three motors rather than one which resulted in us needing to find an appropriate motor driver board. We also needed to do Torque Calculations to figure out what size radii disks we would need without burning out our motors.
 
 ![20240506_164433nnnn](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/fbbc7efb-3a09-45ad-b4ad-a3fb82df396a)
@@ -157,33 +162,41 @@ Our prototype did indeed monitor, transfer data, and control. We were able to de
 The Software functionality list was as follows with our updated look:
 
 *SRS MS 01 – The distance sensor shall operate and report values at least every .5 second.*
+
 This was accomplished.
 
 *SRS MS 02 - Upon non-nominal distance detected (i.e. the trap mechanism has changed at least 10 cm from nominal range), the system shall be able to detect the change and alert the user in a timely manner (within 5 seconds).*
+
 This was accomplished. 
 
 *SRS MS 03 - Upon a request from the user, the system shall get an image from the internal cameral and upload to the image to the user system within 10s.*
+
 This was not accomplished due to both hardware and software issues with the camera.
 
 #### DTS and the User System
 *SRS DTS 01 - The user system shall report the status of all connected traps*
+
 Since we only had one trap designed, we have yet to test if the user can sense additional traps. The potential is there, and we have no restriction on adding more to the network.
 
 The trap does get constant updates of the door state telling the user whether the trap is open or closed.
 
 *SRS DTS 02 - The user system shall be able to request any connected trap to be reset*
+
 Since we only had one trap designed, we have yet to test if the user can sense additional traps. The potential is there, and we have no restriction on adding more to the network.
 
 The trap does have the ability to be reset and was demonstrated in the video.
 
 *SRS DTS 03 - The DTS shall use the WINC 1500 wifi module to connect to the user system and send/recieve data*
+
 We did indeed use this module. See image of board for proof.
 
 #### CS
 *SRS CS 01 - Upon a request from the user, the motor shall activate and retract the trap mechanism.*
+
 This was accomplished and recorded in the video.
 
 *SRS CS 02 - Upon a request from the user, the noisemaker shall activate for 2 seconds.*
+
 The noisemaker was changed to an automatic result of the trap retraction process as it made more sense for overall design.
 
 
