@@ -90,6 +90,8 @@ For the next iteration of our prototype we would explore using a multi celled ba
 
 We would also explore using a microcontroller with a larger memory capacity, or a lower quality camera. Because our microcontroller was not able to store the picture in its entirety we ran into memory mismatch issues. 
 
+Lastly, our mounts were okay for testing whether our overall system works, but we should design a mount for the distance sensor as well as adding more secure mounts for each of the three motors.
+
 ## Next Steps
 Resolving the camera issues. We are unsure if the camera can be fully powered while all three of our motors are plugged in, and even so the microcontrollers ability to fully process the image and transmit it to the server was much more difficult to fully implement than we had expected.
 
@@ -111,6 +113,89 @@ Resolving the camera issues. We are unsure if the camera can be fully powered wh
 [PCBA Share Link](https://upenn-eselabs.365.altium.com/designs/FF235DAA-4BB0-4413-B5CD-DB408AEACE1F#design)
 
 # 3. Hardware & Software Requirements
+So, how did we do at meeting our hardware and software specifications?
+## Hardware Requirements Specification, Then & Now
+Our Original Hardware Specification Overview was worded as follows:
+
+*"From a hardware stand point, the system shall be made up of a standard animal live trap and an electronic suite that will sense the state of the trap and mechanically reset the trap on demand. The electronic suite shall be made up of a microcontroller to operate the control logic, a wifi module to communicate the trap state to the user and accept reset commands, various sensors to monitor the interior of the trap and the trap mechanism, motors to reset the trap mechanism, and lights and a noisemaker to drive away non-target subjects."*
+
+Our prototype was indeed a standard animal live trap that can sense the state of the trap based on the input of a distance sensor. We were able to use motors to reset the trap remotely. It was made of a microcontroller with a wifi module linked to a server, a camera sensor to monitor the inside of the trap and a distance sensor to monitor door state, three motors to reset the trap, and a buzzer to scare away any unwanted creatures. We decided against the strobelight.
+
+### Functionality
+The Hardware functionality list was as follows with our updated look:
+
+*HRS 01 - Project shall be based on the SAM W25 microcontroller for the state control.*
+We did indeed use this microcontroller. Please reference our board images for proof.
+
+*HRS 02 – Distance type sensor shall be used for obstacle detection.  The sensor shall detect obstacles at a maximum distance of at least 10 cm.*
+We used the GP2Y0E02B distance sensor which according to the datasheet operates up to 50 cm. The following two images show the results of testing the device which exceeded our expectations and allowed us to measure what we needed. Near vs far.
+![18cm](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/08b06876-573a-47bd-bcc1-48ef6486e034)
+![63cm](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/28b724bb-c4d8-452e-aad6-bc266bbba8bc)
+
+
+*HRS 03 - Camera sensor shall be used for image capture of the trap interior. The resolution shall be at least 480p.*
+We did implement a Camera in our system that operated off of UART. We had a pinout on our board for the UCAM-III which the resolution of is VGA 640x480 pixels. However, due to sharing the 5V power pin with the motor driver board, the camera was unable to be powered at the same time as all three motors. It could be powered seperatly, but not during their operation. This was problematic as the cameras power draw interfered with the motors so much so that they did not have enough to run simulatenously. This resulted in us unplugging the camera to make the system work.
+
+*HRS 04 - There shall be a noisemaker inside the trap with a strenth of at least 55 dB that will.*
+The buzzer we used was the CMI-1295-85T which has a max rating of 85 dB accourding to the datasheet. While we did not explicitly test the dB level, the loud sound it made which needed to be covered by tape along with our annoyed colleagues glances in the lab told us it was doing its job.
+
+*HRS 05 - A electronic motor shall be used to reset the trap remotely and have a torque of 40 Nm in order to reset the trap mechanism.*
+We were a bit off on our initial torque estimates. We actually only needed 20 Kg-cm of torque. We also needed three motors rather than one which resulted in us 
+
+
+## 3. Software Requirements Specification (SRS)
+### 3.1 Overview
+Our system shall have a monitoring system, data transfer system, and control system. The monitoring system shall detect when the trap door mechanism is activated and upon request, send an image of the interior of the trap. The data transfer system will connect the device to a cloud-based system that the user can access. The control system will allow the user to reset the tran mechanism and repel unwanted subjects from the trap interior with the use of a noisemaker.
+
+### 3.2 Users
+The users should be people looking to capture live animal(s) that can fit at most within .5m by .2m by .2m. This should include conservationist organizations, animal adoption services, and animal handlers.
+
+### 3.3 Definitions, Abbreviations
+- Monitor system(MS)
+- Data Transfer System (DTS)
+- Control System (CS)
+- User System - a cloud based server that will be the main endpoint that each trap will connect with as well as the interface which the user can interact with the traps online
+
+### 3.4 Functionality
+#### SRS
+SRS MS 01 – The distance sensor shall operate and report values at least every .5 second.
+
+SRS MS 02 - Upon non-nominal distance detected (i.e. the trap mechanism has changed at least 10 cm from nominal range), the system shall be able to detect the change and alert the user in a timely manner (within 5 seconds).
+
+SRS MS 03 - Upon a request from the user, the system shall get an image from the internal cameral and upload to the image to the user system within 10s.
+
+#### DTS and the User System
+SRS DTS 01 - The user system shall report the status of all connected traps
+
+SRS DTS 02 - The user system shall be able to request any connected trap to be reset 
+
+SRS DTS 03 - The DTS shall use the WINC 1500 wifi module to connect to the user system and send/recieve data
+
+#### CS
+SRS CS 01 - Upon a request from the user, the motor shall activate and retract the trap mechanism.
+
+SRS CS 02 - Upon a request from the user, the noisemaker shall activate for 2 seconds.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 4. Project Photos & Screenshots
 
