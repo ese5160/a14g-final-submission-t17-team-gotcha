@@ -154,7 +154,7 @@ We were a bit off on our initial torque estimates. We actually only needed 20 Kg
 ## Software Requirements Specification, Then & Now
 Our Original Software Specification Overview was worded as follows:
 
-*Our system shall have a monitoring system, data transfer system, and control system. The monitoring system shall detect when the trap door mechanism is activated and upon request, send an image of the interior of the trap. The data transfer system will connect the device to a cloud-based system that the user can access. The control system will allow the user to reset the trap mechanism and repel unwanted subjects from the trap interior with the use of a noisemaker.*
+*"Our system shall have a monitoring system, data transfer system, and control system. The monitoring system shall detect when the trap door mechanism is activated and upon request, send an image of the interior of the trap. The data transfer system will connect the device to a cloud-based system that the user can access. The control system will allow the user to reset the trap mechanism and repel unwanted subjects from the trap interior with the use of a noisemaker."*
 
 Our prototype did indeed monitor, transfer data, and control. We were able to detect when the trap door was opened and closed, but we were unable to send an image of the interior of the trap. The data was transfered to a cloud based system called Node-RED which ran on Azure. The data we transfered was door state and user commands however because we were unable to transfer the images. The control system was the user resetting the trap which at the end of the trap reset cycle the buzzer would sound potentially repelling any unwanted subjects.
 
