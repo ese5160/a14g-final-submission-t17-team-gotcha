@@ -92,8 +92,20 @@ We would also explore using a microcontroller with a larger memory capacity, or 
 Resolving the camera issues. We are unsure if the camera can be fully powered while all three of our motors are plugged in, and even so the microcontrollers ability to fully process the image and transmit it to the server was much more difficult to fully implement than we had expected.
 
 ## Takeaways from ESE5160
+1. We learned how to design a bootloader as well as why we would need a bootloader in an IoT device.
+2. We learned how to design, route, and prepare a circuit board for manufacturing.
+3. We learned how to test a circuit board that had been manufactured to determine if it functioned the way the designers intended.
+4. We learned how to write the drivers for our periphereal devices for a specificly selected microcontroller.
+5. We learned how to integrate our device with the internet via a sever, and send messages to and from our device and server.
+6. We learned how to consider system security and integrety for a hardware device.
+7. We learned how to build an initial prototype from scratch starting with an idea and working all the way to a (mostly) functioning model.
+8. How to use GitHub to collaborate on a project with other Engineers.
 
 ## Project Links
+[Node-RED instance](http://20.36.130.119:1880/)
+
+[A12G Code Repository](https://github.com/ese5160/a12g-firmware-drivers-t17-team-gotcha)
+
 
 # 3. Hardware & Software Requirements
 
