@@ -72,6 +72,29 @@ The Adafruit 16-Channel 12-bit PWM/Servo Driver - I2C interface - [PCA9685](http
 
 This board allowed us to take an I2C signal from our circuit board and translate it into three individual PWM motors.
 
+## Challenges
+We faced a couple of unique and unexpected challenges, most of which we were able to overcome.
+
+1. One motor was not enough to open/reset the trap. This was hard because our board was only designed to handle one motor. In order to overcome this we got a motor driver board and split our I2C comm channel which was communicating to our distance sensor so that our board could also communicate to the motor driver. We hijacked the camera 5V output pin to help power the motor driver as well. In this way we were able to power three motors instead of one. It required careful current monitoring and testing of each one with an Arduino in order to ensure it would not fry our board.
+2. I2C refused to work on Sercom 3 for the longest time. All code worked with Sercom 0, and on the test devboard all code for Sercom 3 worked, but for some reason the same code on our board would not work. We realized after nights that after we fully soldered one of the wires on, the code suddenly worked. The connection could have been just not secured well enough.
+3. Our bootloader wouldn't load. After 4 hours of testing we realized that the SD card had somehow failed.
+4. Our motors could not open the doors initially. We had to go through and do weight testing and some physics math in order to determine the weight, and therefore the torque, we would need from each motor. From this we were able to determine the minimum and maximum radii that we could use for our motor spools. We then also had to go through many servos to see if any worked, and we also had to deal with some of the servos being limited to 180 or 270 degrees of rotation. Fortunately we sourced two, and ordered a third, which allowed the system to function properly.
+5. 
+
+## Prototype Learnings
+We learned that this device requires three motors, not one, to be fully opened. We only designed our board for one motor, and in order to handle multiple we needed to add a Motor Driver board. Because of this addition, we needed to split our I2C line between our distance sensor and our motor driver. We also had to share a 5V line of the motor driver with our camera, which hindered its operation. For the next iteration of our prototype we would either A) add in another I2C line for our motor driver and add an output pin for power and ground solely for this board or B) add in two more motor ports on our main board operating off of PWM so that we could cut out the motor driver all together.
+
+For the next iteration of our prototype we would explore using a multi celled battery. Our system was having power problems at the end due to the several motors and camera all trying to be powered. This drained our battery rather quickly. 
+
+We would also explore using a microcontroller with a larger memory capacity, or a lower quality camera. Because our microcontroller was not able to store the picture in its entirety we ran into memory mismatch issues. 
+
+## Next Steps
+Resolving the camera issues. We are unsure if the camera can be fully powered while all three of our motors are plugged in, and even so the microcontrollers ability to fully process the image and transmit it to the server was much more difficult to fully implement than we had expected.
+
+## Takeaways from ESE5160
+
+## Project Links
+
 # 3. Hardware & Software Requirements
 
 # 4. Project Photos & Screenshots
