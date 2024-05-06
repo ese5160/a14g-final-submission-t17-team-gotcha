@@ -113,3 +113,30 @@ Resolving the camera issues. We are unsure if the camera can be fully powered wh
 # 3. Hardware & Software Requirements
 
 # 4. Project Photos & Screenshots
+
+![20240506_154446](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/6968748e-0084-46ed-b791-7e4b5ebd2a59)
+
+![20240506_154343](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/71a17238-b8aa-4f20-9095-a98a4b90133e)
+
+![20240506_154304](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/6ca1b223-cece-4e03-9119-33ebc11e17bd)
+
+![1y6zkuhp](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/0e656da0-cc79-4f7b-96dc-44465da74e36)
+
+![image-1](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/7d0ef5bb-12a4-4818-8656-0cd91a6066d1)
+
+![image-2](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/4dcdd188-9a2d-4f06-ab1e-a902e394c9de)
+
+![FLIR1000008](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/5b9d1efb-1bd4-4c47-bee3-f1af6a148ed9)
+
+![2D Altium](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/7524ab6c-3bac-473e-8cbe-d56a0727274b)
+
+![3D Altium](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/413e2d94-1611-4e26-9509-5dd5203a6ca4)
+
+![nodefor](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/aacbe642-56cd-470f-90b7-a63059d7a9c5)
+
+![nodeback](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/8bf24f4e-cff3-48e2-8895-262b4b88aec4)
+
+![MEAM519 drawio(1) drawio (2)](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/0d2dfb8d-2982-4a46-8a08-b87153ee9ecb)
+
+
+
