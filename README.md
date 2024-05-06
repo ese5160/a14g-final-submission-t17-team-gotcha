@@ -104,7 +104,7 @@ Resolving the camera issues. We are unsure if the camera can be fully powered wh
 8. How to use GitHub to collaborate on a project with other Engineers.
 
 ## Project Links
-[Node-RED instance](http://20.36.130.119:1880/)
+[Node-RED instance](http://20.36.130.119:1880/) Server link doesn't work due to our Azure VM account being banned.
 
 [A12G Code Repository](https://github.com/ese5160/a12g-firmware-drivers-t17-team-gotcha)
 
