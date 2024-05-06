@@ -36,7 +36,7 @@ We accompish the third task by using three motors, a motor driver board, and inf
 
 We accompish the forth task by activating the CMI-1295-85T Buzzer when the trap is opened in order to scare out the unwanted animal.
 
-[Insert Flow chart]
+![MEAM519 drawio(1) drawio (2)](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/0d2dfb8d-2982-4a46-8a08-b87153ee9ecb)
 
 ### Our sensors are as follows:
 
@@ -62,7 +62,7 @@ The SG90 - [Micro Servo Motor](https://www.digikey.com/en/products/detail/dfrobo
 
 This motor handles the trigger hook of the trap.
 
-The Blank - 20 Kg Servo Motor
+The ANNIMOS - [20 Kg Servo Motor](https://www.amazon.com/ANNIMOS-Digital-Waterproof-DS3218MG-Control/dp/B076CNKQX4)
 
 This motor handle pulling the whole door open.
 
