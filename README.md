@@ -140,42 +140,51 @@ We did implement a Camera in our system that operated off of UART. We had a pino
 The buzzer we used was the CMI-1295-85T which has a max rating of 85 dB accourding to the datasheet. While we did not explicitly test the dB level, the loud sound it made which needed to be covered by tape along with our annoyed colleagues glances in the lab told us it was doing its job.
 
 *HRS 05 - A electronic motor shall be used to reset the trap remotely and have a torque of 40 Nm in order to reset the trap mechanism.*
-We were a bit off on our initial torque estimates. We actually only needed 20 Kg-cm of torque. We also needed three motors rather than one which resulted in us 
+We were a bit off on our initial torque estimates. We actually only needed 20 Kg-cm of torque. We also needed three motors rather than one which resulted in us needing to find an appropriate motor driver board. We also needed to do Torque Calculations to figure out what size radii disks we would need without burning out our motors.
+
+![20240506_164433nnnn](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/fbbc7efb-3a09-45ad-b4ad-a3fb82df396a)
 
 
-## 3. Software Requirements Specification (SRS)
-### 3.1 Overview
-Our system shall have a monitoring system, data transfer system, and control system. The monitoring system shall detect when the trap door mechanism is activated and upon request, send an image of the interior of the trap. The data transfer system will connect the device to a cloud-based system that the user can access. The control system will allow the user to reset the tran mechanism and repel unwanted subjects from the trap interior with the use of a noisemaker.
 
-### 3.2 Users
-The users should be people looking to capture live animal(s) that can fit at most within .5m by .2m by .2m. This should include conservationist organizations, animal adoption services, and animal handlers.
+## Software Requirements Specification, Then & Now
+Our Original Software Specification Overview was worded as follows:
 
-### 3.3 Definitions, Abbreviations
-- Monitor system(MS)
-- Data Transfer System (DTS)
-- Control System (CS)
-- User System - a cloud based server that will be the main endpoint that each trap will connect with as well as the interface which the user can interact with the traps online
+*Our system shall have a monitoring system, data transfer system, and control system. The monitoring system shall detect when the trap door mechanism is activated and upon request, send an image of the interior of the trap. The data transfer system will connect the device to a cloud-based system that the user can access. The control system will allow the user to reset the trap mechanism and repel unwanted subjects from the trap interior with the use of a noisemaker.*
 
-### 3.4 Functionality
-#### SRS
-SRS MS 01 – The distance sensor shall operate and report values at least every .5 second.
+Our prototype did indeed monitor, transfer data, and control. We were able to detect when the trap door was opened and closed, but we were unable to send an image of the interior of the trap. The data was transfered to a cloud based system called Node-RED which ran on Azure. The data we transfered was door state and user commands however because we were unable to transfer the images. The control system was the user resetting the trap which at the end of the trap reset cycle the buzzer would sound potentially repelling any unwanted subjects.
 
-SRS MS 02 - Upon non-nominal distance detected (i.e. the trap mechanism has changed at least 10 cm from nominal range), the system shall be able to detect the change and alert the user in a timely manner (within 5 seconds).
+### Functionality
+The Software functionality list was as follows with our updated look:
 
-SRS MS 03 - Upon a request from the user, the system shall get an image from the internal cameral and upload to the image to the user system within 10s.
+*SRS MS 01 – The distance sensor shall operate and report values at least every .5 second.*
+This was accomplished.
+
+*SRS MS 02 - Upon non-nominal distance detected (i.e. the trap mechanism has changed at least 10 cm from nominal range), the system shall be able to detect the change and alert the user in a timely manner (within 5 seconds).*
+This was accomplished. 
+
+*SRS MS 03 - Upon a request from the user, the system shall get an image from the internal cameral and upload to the image to the user system within 10s.*
+This was not accomplished due to both hardware and software issues with the camera.
 
 #### DTS and the User System
-SRS DTS 01 - The user system shall report the status of all connected traps
+*SRS DTS 01 - The user system shall report the status of all connected traps*
+Since we only had one trap designed, we have yet to test if the user can sense additional traps. The potential is there, and we have no restriction on adding more to the network.
 
-SRS DTS 02 - The user system shall be able to request any connected trap to be reset 
+The trap does get constant updates of the door state telling the user whether the trap is open or closed.
 
-SRS DTS 03 - The DTS shall use the WINC 1500 wifi module to connect to the user system and send/recieve data
+*SRS DTS 02 - The user system shall be able to request any connected trap to be reset*
+Since we only had one trap designed, we have yet to test if the user can sense additional traps. The potential is there, and we have no restriction on adding more to the network.
+
+The trap does have the ability to be reset and was demonstrated in the video.
+
+*SRS DTS 03 - The DTS shall use the WINC 1500 wifi module to connect to the user system and send/recieve data*
+We did indeed use this module. See image of board for proof.
 
 #### CS
-SRS CS 01 - Upon a request from the user, the motor shall activate and retract the trap mechanism.
+*SRS CS 01 - Upon a request from the user, the motor shall activate and retract the trap mechanism.*
+This was accomplished and recorded in the video.
 
-SRS CS 02 - Upon a request from the user, the noisemaker shall activate for 2 seconds.
-
+*SRS CS 02 - Upon a request from the user, the noisemaker shall activate for 2 seconds.*
+The noisemaker was changed to an automatic result of the trap retraction process as it made more sense for overall design.
 
 
 
