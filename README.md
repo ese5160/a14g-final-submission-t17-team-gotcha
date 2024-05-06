@@ -106,6 +106,7 @@ Resolving the camera issues. We are unsure if the camera can be fully powered wh
 
 [A12G Code Repository](https://github.com/ese5160/a12g-firmware-drivers-t17-team-gotcha)
 
+[PCBA Share Link](https://upenn-eselabs.365.altium.com/designs/FF235DAA-4BB0-4413-B5CD-DB408AEACE1F#design)
 
 # 3. Hardware & Software Requirements
 
