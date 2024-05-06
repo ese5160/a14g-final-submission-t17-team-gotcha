@@ -34,6 +34,8 @@ We accompish the third task by using three motors, a motor driver board, and inf
 5. Gently Lower base of door
 6. Release tension on front part of door
 
+We accompish the forth task by activating the CMI-1295-85T Buzzer when the trap is opened in order to scare out the unwanted animal.
+
 [Insert Flow chart]
 
 ### Our sensors are as follows:
