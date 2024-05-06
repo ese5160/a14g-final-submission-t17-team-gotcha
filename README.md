@@ -38,6 +38,8 @@ We accompish the forth task by activating the CMI-1295-85T Buzzer when the trap 
 
 ![MEAM519 drawio(1) drawio (2)](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/0d2dfb8d-2982-4a46-8a08-b87153ee9ecb)
 
+Our device has a single 3.7V LiPo battery connected into a BQ24075RGTR chip which is responsible for allowing the battery to be recharged via a usb connector. This chip is then routed into a 3.3V buck regulator and a 5V boost regulator we designed ourselves so that each peripheral, as well as the microcontroller, is powered at the appropriate voltage level. We used the SAMW25 microcontroller which utilizes a SAMD21 chip as well as a WINC 1500 Wifi Module. Our peripherals are a Buzzer which recieves input via GPIO adjusted by an Op Amp, a Camera which operates using UART, a Distance Sensor running off I2C, a Motor Driver board operating off I2C, and three motors operating on PWM.
+
 ### Our sensors are as follows:
 
 The UCAM-III - [Camera](https://www.digikey.com/en/products/detail/4d-systems-pty-ltd/UCAM-III/6623663?utm_adgroup=General&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_Zombie%20SKUs&utm_term=&utm_content=General&utm_id=go_cmp-17815035045_adg-_ad-__dev-c_ext-_prd-6623663_sig-Cj0KCQiAzoeuBhDqARIsAMdH14F6TkdvV--Y6dbAXKAQEQVftdMaF9692gcQwgdwuc1FlIvNWcrb_eUaAlEKEALw_wcB&gad_source=1&gclid=Cj0KCQiAzoeuBhDqARIsAMdH14F6TkdvV--Y6dbAXKAQEQVftdMaF9692gcQwgdwuc1FlIvNWcrb_eUaAlEKEALw_wcB)
