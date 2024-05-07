@@ -1,12 +1,11 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/kzkUPShx)
 # a14g-final-submission
 
-    * Team Number: 
-    * Team Name: 
-    * Team Members: 
-    * Github Repository URL: 
-    * Description of test hardware: (development boards, sensors, actuators, laptop + OS, etc) 
-
+    * Team Number: 17
+    * Team Name: Team Gotcha
+    * Team Members: Michael Shao
+    * Github Repository URL: https://github.com/ese5160/a14g-final-submission-t17-team-gotcha
+    * Description of test hardware: SAMW25, Distance Sensors, UCAMIII, Servos, PCAC9685 Adafruit Motor Driver Board 
 # 1. Video Presentation
 
 # 2. Project Summary
