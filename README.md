@@ -8,8 +8,8 @@
     * Description of test hardware: SAMW25, Distance Sensors, UCAMIII, Servos, PCAC9685 Adafruit Motor Driver Board 
 # 1. Video Presentation
 
-![video](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/FinalIoTDesign%20(1).mp4)
-
+<video src='FinalIoTDesign%20(1).mp4' width=180/>
+   
 # 2. Project Summary
 
 ## Device Description
@@ -130,6 +130,8 @@ We did indeed use this microcontroller. Please reference our board images for pr
 *HRS 02 – Distance type sensor shall be used for obstacle detection.  The sensor shall detect obstacles at a maximum distance of at least 10 cm.*
 
 We used the GP2Y0E02B distance sensor which according to the datasheet operates up to 50 cm. The following two images show the results of testing the device which exceeded our expectations and allowed us to measure what we needed. Near vs far.
+
+
 ![18cm](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/08b06876-573a-47bd-bcc1-48ef6486e034)
 ![63cm](https://github.com/ese5160/a14g-final-submission-t17-team-gotcha/assets/148781333/28b724bb-c4d8-452e-aad6-bc266bbba8bc)
 
