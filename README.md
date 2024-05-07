@@ -10,7 +10,7 @@
 See the deployed website ![here](https://ese5160.github.io/a14g-final-submission-t17-team-gotcha/)
     
 # 1. Video Presentation
-<video src='FinalIoTDesign%20(1).mp4' width=480 > </video>
+<video src='FinalIoTDesign%20(1).mp4' width=640 > </video>
 
 
 Right click to see the playing options on the github pages.
