@@ -7,7 +7,7 @@
     * Github Repository URL: https://github.com/ese5160/a14g-final-submission-t17-team-gotcha
     * Description of test hardware: SAMW25, Distance Sensors, UCAMIII, Servos, PCAC9685 Adafruit Motor Driver Board 
 # 1. Video Presentation
-
+See File IoT Design.mp4
 # 2. Project Summary
 
 ## Device Description
