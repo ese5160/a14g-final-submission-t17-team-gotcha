@@ -8,7 +8,7 @@
     * Description of test hardware: SAMW25, Distance Sensors, UCAMIII, Servos, PCAC9685 Adafruit Motor Driver Board 
 # 1. Video Presentation
 
-<video src='FinalIoTDesign%20(1).mp4' />
+<video src='FinalIoTDesign%20(1).mp4' /> </video>
    
 # 2. Project Summary
 
